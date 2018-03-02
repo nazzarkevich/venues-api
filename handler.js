@@ -3,8 +3,8 @@ const https = require('https');
 const Json2csvParser = require('json2csv').Parser;
 
 module.exports.hello = (event, context, callback) => {
-  let lat = event.lat;
-  let lng = event.lng;
+  let lat = +event.lat;
+  let lng = +event.lng;
   let location = lat + ',-' + lng;
   let venue = event.venue;
   let km = event.radius * 10;
