@@ -23,7 +23,7 @@ module.exports.hello = (event, context, callback) => {
     res.on('end', () => {
       body = JSON.parse(body);
       let newBody = getValues(body.response.venues);
-      const json2csvParser = new Json2csvParser({ fields, quote: ''});
+      const json2csvParser = new Json2csvParser({ fields });
       const csv = json2csvParser.parse(newBody);
       callback(null, csv);
     });
